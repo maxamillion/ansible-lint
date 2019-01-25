@@ -1,0 +1,7 @@
+---
+- tasks:
+  - name: command no pipe
+    command: /usr/bin/echo hello
+
+  - name: command with jinja filter
+    command: /usr/bin/echo {{"hello"|upper}}

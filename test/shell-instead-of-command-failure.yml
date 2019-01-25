@@ -1,0 +1,33 @@
+- tasks:
+  - name: command with pipe
+    command: echo hello | true
+
+  - name: command with redirect
+    command: echo hello >  /tmp/hello
+
+  - name: chain two commands
+    command: echo hello && echo goodbye
+
+  - name: run commands in succession
+    command: echo hello ; echo goodbye
+
+  - name: use variables
+    command: echo $HOME $USER
+
+  - name: use * for globbing
+    command: ls foo*
+
+  - name: use ? for globbing
+    command: ls foo?
+
+  - name: use [] for globbing
+    command: ls foo[1,2,3]
+
+  - name: use shell generator
+    command: ls foo{.txt,.xml}
+
+  - name: use command with multi line cmd
+    command:
+      cmd: |
+        set -x
+        ls foo?
